@@ -1,0 +1,49 @@
+<%@ Title="APEDES - Login" %>
+<com:TContent ID="maincontent">
+<com:TPanel Visible="<%=$this->User->isGuest==true%>" CssClass="form">
+    <h1 class="text-light">User Login</h1>
+    <div class="form-horizontal">
+        <div class="form-group">                        
+            <div class="input-group m-b-15 p-t-20">
+                <div class="input-group-addon"><i class="icon-user"></i></div>                            
+                <com:TTextBox ID="txtUsername" CssClass="form-control" Attributes.Placeholder="Username" />
+            </div>
+            <com:TRequiredFieldValidator ID="IsUsernameFilledValidator" ControlToValidate="txtUsername" Display="Dynamic" Text="Silahkan isi Username Anda !!!" ValidationGroup="userlogin" FocusOnError="true" />
+        </div>
+        <div class="form-group">                        
+            <div class="input-group m-b-15" id="divUserpassword">
+                <div class="input-group-addon"><i class="icon-key"></i></div>                            
+                <com:TTextBox ID="txtPassword" TextMode="Password" CssClass="form-control" Attributes.Placeholder="Password"/>                            
+            </div>
+            <com:TRequiredFieldValidator ID="IsPasswordFilledValidator" ControlToValidate="txtPassword" Display="Dynamic" Text="Silahkan isi Password Anda !!!" ValidationGroup="userlogin" FocusOnError="true" />                                                   
+        </div>
+        <div class="form-group">
+            <com:TActiveCustomButton ID="btnLogin" CssClass="btn btn-info btn-block m-t-20" ValidationGroup="userlogin" Onclick="doLogin">                            
+                <prop:Text>                                
+                    Login
+                </prop:Text>
+                <prop:ClientSide.OnPreDispatch>
+                    Pace.stop();
+                    Pace.start();
+                    $('#<%=$this->btnLogin->ClientId%>').prop('disabled',true);						
+                </prop:ClientSide.OnPreDispatch>
+                <prop:ClientSide.OnLoading>
+                    $('#<%=$this->btnLogin->ClientId%>').prop('disabled',true);									                                    
+                </prop:ClientSide.OnLoading>
+                <prop:ClientSide.onComplete>                                    
+                    $('#<%=$this->btnLogin->ClientId%>').prop('disabled',false);																								                                                                                                                
+                </prop:ClientSide.OnComplete>
+            </com:TActiveCustomButton>
+        </div>
+        <div class="form-group text-center">
+            <com:TActiveCustomValidator ControlToValidate="txtUsername" Display="Dynamic" OnServerValidate="checkUsernameAndPassword" ValidationGroup="userlogin" />
+        </div>            
+    </div>
+    <com:TJavascriptLogger ID="loggerJS" />
+</com:TPanel>
+<com:TPanel Visible="<%=$this->User->isGuest==false%>" CssClass="form">    
+    <div class="form-horizontal">
+        You have logged in, click <a href="<%=$this->Page->constructUrl('Home',true)%>">here</a> back to the dashboard.
+    </div>    
+</com:TPanel>
+</com:TContent>
