@@ -22,7 +22,7 @@
     <parameters>
         <parameter id="db_host" value="localhost"/>
         <parameter id="db_username" value="root"/>
-        <parameter id="db_userpassword" value=""/>
+        <parameter id="db_userpassword" value="toor"/>
         <parameter id="db_name" value="apedes"/>
         <parameter id="db_type" value="mysql"/>		
         <parameter id="address_lokal" value="http://localhost/apedes"/>
