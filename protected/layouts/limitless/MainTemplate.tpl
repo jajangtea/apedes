@@ -139,20 +139,17 @@
                                 <div class="col-md-3">
                                     <span class="menu-heading underlined">Olah Data #1</span>
                                     <ul class="menu-list">
-                                        <li><a href="<%=$this->Page->constructUrl('umum.Perdes',true)%>"><i class="icon-width"></i> Peraturan</a></li>
-                                        <li><a href="<%=$this->Page->constructUrl('umum.Kepdes',true)%>"><i class="icon-width"></i> Keputusan Kepala Desa</a></li>
-                                        <li><a href="<%=$this->Page->constructUrl('umum.InventarisKekayaanDes',true)%>"><i class="icon-width"></i> Inventaris dan Kekayaan</a></li>
-                                        <li><a href="<%=$this->Page->constructUrl('umum.AparatPemdes',true)%>"><i class="icon-width"></i> Aparat Pemerintah Desa</a></li>
-                                        <li><a href="<%=$this->Page->constructUrl('umum.AparatPemdes',true)%>"><i class="icon-width"></i> Tanah dan Kas Desa</a></li>                                        
+                                        <li><a href="<%=$this->Page->constructUrl('capil.IndukPenduduk',true)%>"><i class="icon-width"></i> Buku Induk Penduduk</a></li>
+                                        <li><a href="<%=$this->Page->constructUrl('capil.Kepdes',true)%>"><i class="icon-width"></i> Mutasi Penduduk Desa</a></li>
+                                        <li><a href="<%=$this->Page->constructUrl('capil.PendudukSementara',true)%>"><i class="icon-width"></i> Penduduk Sementara</a></li>
+                                        <li><a href="<%=$this->Page->constructUrl('capil.KTP',true)%>"><i class="icon-width"></i> Kartu Tanda Penduduk</a></li>
+                                        <li><a href="<%=$this->Page->constructUrl('capil.KK',true)%>"><i class="icon-width"></i> Kartu Keluarga</a></li>                                        
                                     </ul>
                                 </div>  
                                 <div class="col-md-3">
-                                    <span class="menu-heading underlined">Olah Data #2</span>
+                                    <span class="menu-heading underlined">Laporan</span>
                                     <ul class="menu-list">                                        
-                                        <li><a href="<%=$this->Page->constructUrl('umum.AparatPemdes',true)%>"><i class="icon-width"></i> Tanah Desa</a></li>
-                                        <li><a href="<%=$this->Page->constructUrl('umum.AparatPemdes',true)%>"><i class="icon-width"></i> Agenda</a></li>
-                                        <li><a href="<%=$this->Page->constructUrl('umum.AparatPemdes',true)%>"><i class="icon-width"></i> Ekspedisi</a></li>
-                                        <li><a href="<%=$this->Page->constructUrl('umum.AparatPemdes',true)%>"><i class="icon-width"></i> Lembaran dan Berita Desa</a></li>                                        
+                                        <li><a href="<%=$this->Page->constructUrl('capil.RekapJumlahPenduduk',true)%>"><i class="icon-width"></i> Rekapitulasi Jumlah Penduduk</a></li>                                        
                                     </ul>
                                 </div>  
                             </div>
