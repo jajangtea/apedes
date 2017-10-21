@@ -40,6 +40,9 @@ APEDES membantu pemerintah desa untuk mengelola hal-hal berikut :
 * Buku Musyawarah Desa;
 * Buku Lembaga Kemasyarakatan Desa/Lembaga Adat;
 
+## INSTALASI
+
+N.A
 
 
 
