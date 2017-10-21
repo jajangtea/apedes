@@ -1,2 +1,7 @@
+/protected/runtime/
+/protected/application.xml
+/exported/
+/assets/
 /themes/
 /nbproject/
+/index.php
