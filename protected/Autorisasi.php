@@ -26,8 +26,8 @@ class Autorisasi extends TModule implements IUserManager {
 			return $user;
 		}else {			
 			$user = new TUser ($this);	
-            $str = "SELECT userid,username,page,user.idbidang,kode_bidang,nama_bidang,theme,photo_profile,active FROM user LEFT JOIN bidang ON (bidang.idbidang=user.idbidang) WHERE username='$username'";
-            $this->db->setFieldTable (array('userid','username','page','idbidang','kode_bidang','nama_bidang','theme','photo_profile','active'));							
+            $str = "SELECT userid,username,page,user.idurusan,kode_urusan,nama_urusan,theme,photo_profile,active FROM user LEFT JOIN urusan ON (urusan.idurusan=user.idurusan) WHERE username='$username'";
+            $this->db->setFieldTable (array('userid','username','page','idurusan','kode_urusan','nama_urusan','theme','photo_profile','active'));							
             $r = $this->db->getRecord($str);
             switch ($r[1]['page']) {
                 case 'm' :
