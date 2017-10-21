@@ -156,6 +156,57 @@
                         </div>
                     </div>
                 </li>
+                <li class="dropdown mega-menu mega-menu-wide">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        ADMINISTRASI PEMBANGUNAN <span class="caret"></span>
+                    </a>
+                    <div class="dropdown-menu dropdown-content">
+                        <div class="dropdown-content-body">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <span class="menu-heading underlined">Olah Data #1</span>
+                                    <ul class="menu-list">
+                                        <li><a href="<%=$this->Page->constructUrl('pembangunan.RencanaKerjaPembangunan',true)%>"><i class="icon-width"></i> Rencana Kerja Pembangunan</a></li>
+                                        <li><a href="<%=$this->Page->constructUrl('pembangunan.KegiatanPembangunan',true)%>"><i class="icon-width"></i> Kegiatan Pembangunan</a></li>
+                                        <li><a href="<%=$this->Page->constructUrl('pembangunan.InventarisasiHasilPembangunan',true)%>"><i class="icon-width"></i> Inventarisasi Hasil Pembangunan</a></li>
+                                        <li><a href="<%=$this->Page->constructUrl('pembangunan.PendampinganPemberdayaan',true)%>"><i class="icon-width"></i> Kader Pendampingan & Pemberdayaan</a></li>                                                                     
+                                    </ul>
+                                </div>  
+                                <div class="col-md-3">
+                                    <span class="menu-heading underlined">Laporan</span>
+                                    <ul class="menu-list">                                        
+                                        
+                                    </ul>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="dropdown mega-menu mega-menu-wide">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        ADMINISTRASI LAINNYA <span class="caret"></span>
+                    </a>
+                    <div class="dropdown-menu dropdown-content">
+                        <div class="dropdown-content-body">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <span class="menu-heading underlined">Olah Data #1</span>
+                                    <ul class="menu-list">
+                                        <li><a href="<%=$this->Page->constructUrl('lainnya.KegiatanBPD',true)%>"><i class="icon-width"></i> Administrasi BPD</a></li>
+                                        <li><a href="<%=$this->Page->constructUrl('lainnya.Kepdes',true)%>"><i class="icon-width"></i> Musyawarah Desa</a></li>
+                                        <li><a href="<%=$this->Page->constructUrl('lainnya.PendudukSementara',true)%>"><i class="icon-width"></i> Lembaga Kemasyarakatan Desa</a></li>                                                                                                            
+                                    </ul>
+                                </div>  
+                                <div class="col-md-3">
+                                    <span class="menu-heading underlined">Laporan</span>
+                                    <ul class="menu-list">                                        
+                                        
+                                    </ul>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
     </div>
