@@ -7,7 +7,7 @@
                     <ul class="icons-list">
                         <li>
                             <a href="<%=$this->Page->constructUrl('KonversiMatakuliah',true);%>" data-action="closeredirect"></a>
-                        </li>
+                        </li>save
                     </ul>
                 </div>
             </div>
