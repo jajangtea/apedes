@@ -1,10 +1,18 @@
 <?php
 
-class MainPageM extends MainPage {
+class MainPageM extends MainPage {     
     /**     
-     * show menu item administrasi umum
+     * show menu item administrasi umum  [setting]
      */
-    public $showMenuADMUmum=false;
+    public $showMenuADMUmum=false;   
+    /**     
+     * show menu setting [setting]
+     */
+    public $showMenuSetting=false;
+    /**     
+     * show page users [setting]
+     */
+    public $showUsers=false;
     /**     
      * show page cache[setting]
      */

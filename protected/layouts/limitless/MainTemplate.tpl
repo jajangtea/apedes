@@ -90,7 +90,7 @@
                 </li>
                 <li class="dropdown mega-menu mega-menu-wide">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        ADMINISTRASI UMUM <span class="caret"></span>
+                        ADM. UMUM <span class="caret"></span>
                     </a>
                     <div class="dropdown-menu dropdown-content">
                         <div class="dropdown-content-body">
@@ -131,7 +131,7 @@
                 </li>
                 <li class="dropdown mega-menu mega-menu-wide">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        ADMINISTRASI PENDUDUK <span class="caret"></span>
+                        ADM. PENDUDUK <span class="caret"></span>
                     </a>
                     <div class="dropdown-menu dropdown-content">
                         <div class="dropdown-content-body">
@@ -158,7 +158,7 @@
                 </li>
                 <li class="dropdown mega-menu mega-menu-wide">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        ADMINISTRASI PEMBANGUNAN <span class="caret"></span>
+                        ADM. PEMBANGUNAN <span class="caret"></span>
                     </a>
                     <div class="dropdown-menu dropdown-content">
                         <div class="dropdown-content-body">
@@ -184,7 +184,7 @@
                 </li>
                 <li class="dropdown mega-menu mega-menu-wide">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        ADMINISTRASI LAINNYA <span class="caret"></span>
+                        ADM. LAINNYA <span class="caret"></span>
                     </a>
                     <div class="dropdown-menu dropdown-content">
                         <div class="dropdown-content-body">
@@ -206,6 +206,24 @@
                             </div>
                         </div>
                     </div>
+                </li>
+                <li class="dropdown <%=$this->Page->showMenuSetting==true?' active':''%>">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        SETTINGS <span class="caret"></span>
+                    </a>                
+                    <ul class="dropdown-menu width-200">
+                        <li<%=$this->Page->showUsers==true?' class="active"':''%>>
+                            <a href="<%=$this->Page->constructUrl('settings.Users',true)%>">
+                                <i class="icon-user"></i> Pengguna
+                            </a>
+                        </li>
+                        <li class="dropdown-header">Sistem</li>
+                        <li<%=$this->Page->showCache==true?' class="active"':''%>>
+                            <a href="<%=$this->Page->constructUrl('settings.Cache',true)%>">
+                                <i class="icon-database2"></i> Cache
+                            </a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </div>

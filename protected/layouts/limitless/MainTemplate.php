@@ -4,7 +4,7 @@ class MainTemplate extends TTemplateControl {
     public function onLoad ($param) {
 		parent::onLoad($param);	
         if (!$this->Page->IsPostBack&&!$this->Page->IsCallback) {
-            $this->loggerJS->Visible=false;
+            $this->loggerJS->Visible=true;
 		}  
 	}
     public function logoutUser ($sender,$param) {
