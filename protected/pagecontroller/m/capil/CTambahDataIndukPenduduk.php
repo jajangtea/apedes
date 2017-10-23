@@ -1,10 +1,10 @@
 <?php
 prado::using ('Application.MainPageM');
-class CIndukPenduduk extends MainPageM { 
+class CTambahDataIndukPenduduk extends MainPageM { 
     public function onLoad($param) {		
         parent::onLoad($param);		            
         $this->showMenuADMPenduduk=true;
-        $this->showBukuIndukPenduduk=true;
+        $this->showBukuIndukPenduduk=true;        
         if (!$this->IsPostBack&&!$this->IsCallBack) {              
             
         }                
