@@ -26,7 +26,7 @@
                     <label class="col-md-3 control-label text-right">Nomor Urut :</label>
                     <div class="col-md-9">
                         <com:TTextBox ID="txtAddNomorUrut" CssClass="form-control" />
-                        <com:TRequiredFieldValidator ID="FieldAddNomorUrutValidator" ControlToValidate="txtAddNomorUrut" Display="Dynamic" ErrorMessage="Isi Nomor Urut" ValidationGroup="adddataindukpenduduk" CssClass="has-error help-block">
+                        <com:TRequiredFieldValidator ID="FieldAddNomorUrutValidator" ControlToValidate="txtAddNomorUrut" Display="Dynamic" ErrorMessage="Mohon untuk di isi Nomor Urut data" ValidationGroup="adddataindukpenduduk" CssClass="has-error help-block">
                             <prop:ClientSide.OnValidationError>
                                 $('#divAddNomorUrut').addClass('has-error');
                                 $('#<%=$this->FieldAddNomorUrutValidator->ClientID%>').removeAttr('style');
