@@ -5,7 +5,7 @@
 <com:TContent ID="modulebreadcrumb">    
     <li><a href="#">ADMINISTRASI PENDUDUK</a></li>
     <li><a href="<%=$this->Page->constructUrl('capil.IndukPenduduk',true);%>">PENDUDUK SEMENTARA</a></li>
-    <li class="active"><a href="#">TAMBAH DATA INDUK PENDUDUK SEMENTARA</a></li>
+    <li class="active"><a href="#">TAMBAH DATA PENDUDUK SEMENTARA</a></li>
 </com:TContent>
 <com:TContent ID="maincontent">
 <com:TPanel Visible="<%= $this->getDefaultProcess(false) %>" CssClass="content">	   
