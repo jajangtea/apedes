@@ -1,0 +1,206 @@
+<%@ Title="ADM. Penduduk - Buku Induk Penduduk" %>
+<com:TContent ID="moduleheader">
+    <i class="icon-task position-left"></i> <span class="text-semibold">PENDUDUK SEMENTARA</span>
+</com:TContent>
+<com:TContent ID="modulebreadcrumb">    
+    <li><a href="#">ADMINISTRASI PENDUDUK</a></li>
+    <li><a href="<%=$this->Page->constructUrl('capil.IndukPenduduk',true);%>">PENDUDUK SEMENTARA</a></li>
+    <li class="active"><a href="#">TAMBAH DATA INDUK PENDUDUK SEMENTARA</a></li>
+</com:TContent>
+<com:TContent ID="maincontent">
+<com:TPanel Visible="<%= $this->getDefaultProcess(false) %>" CssClass="content">	   
+    <div class="panel panel-flat">
+        <div class="panel-heading">
+            <h5 class="panel-title"><i class="icon-googleplus5 position-left"></i> TAMBAH DATA INDUK PENDUDUK SEMENTARA </h5>
+            <div class="heading-elements">
+                <ul class="icons-list">
+                    <li>
+                        <a href="<%=$this->Page->constructUrl('capil.IndukPenduduk',true);%>" data-action="closeredirect"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="form-horizontal">
+                <div class="form-group" id="divAddNomorUrut">
+                    <label class="col-md-3 control-label text-right">Nomor Urut :</label>
+                    <div class="col-md-9">
+                        <com:TTextBox ID="txtAddNomorUrut" CssClass="form-control" />
+                        <com:TRequiredFieldValidator ID="FieldAddNomorUrutValidator" ControlToValidate="txtAddNomorUrut" Display="Dynamic" ErrorMessage="Mohon untuk di isi Nomor Urut data" ValidationGroup="adddatapenduduksementara" CssClass="has-error help-block">
+                            <prop:ClientSide.OnValidationError>
+                                $('#divAddNomorUrut').addClass('has-error');
+                                $('#<%=$this->FieldAddNomorUrutValidator->ClientID%>').removeAttr('style');
+                            </prop:ClientSide.OnValidationError>
+                            <prop:ClientSide.OnValidationSuccess>                                
+                                $('#divAddNomorUrut').removeClass('has-error');
+                            </prop:ClientSide.OnValidationSuccess>
+                        </com:TRequiredFieldValidator>
+                    </div>
+                </div>
+                <div class="form-group" id="divAddNamaLengkap">
+                    <label class="col-md-3 control-label text-right">Nama Lengkap/Panggilan :</label>
+                    <div class="col-md-9">
+                        <com:TTextBox ID="txtAddNamaLengkap" CssClass="form-control" />
+                        <com:TRequiredFieldValidator ID="FieldAddNamaLengkapValidator" ControlToValidate="txtAddNamaLengkap" Display="Dynamic" ErrorMessage="Mohon untuk di isi nama lengkap warga" ValidationGroup="adddatapenduduksementara" CssClass="has-error help-block">
+                            
+                        </com:TRequiredFieldValidator>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label text-right">Jenis Kelamin :</label>
+                    <div class="col-md-9">
+                        <com:TRadioButton ID="rdAddPria" Checked="true" GroupName="rdaddJK"/>                        
+                        <label>Pria</label>
+                        <com:TRadioButton ID="rdAddWanita" GroupName="rdaddJK"/>                        
+                        <label>Wanita</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label text-right">Status Perkawinan :</label>
+                    <div class="col-md-9">
+                        <com:TRadioButton ID="rdAddSudahMenikah" Checked="true" GroupName="rdaddSdhNikah"/>                        
+                        <label>Menikah</label>
+                        <com:TRadioButton ID="rdAddBelumMenikah" GroupName="rdaddBlmNikah"/>                        
+                        <label>Belum Menikah</label>
+                    </div>
+                </div>  
+                <div class="form-group" id="divAddTempatLahir">
+                    <label class="col-md-3 control-label text-right">Tempat Lahir :</label>
+                    <div class="col-md-9">
+                        <com:TTextBox ID="txtAddTempatLahir" CssClass="form-control" />
+                        <com:TRequiredFieldValidator ID="FieldAddTempatLahirValidator" ControlToValidate="txtAddTempatLahir" Display="Dynamic" ErrorMessage="Isi Tempat Lahir" ValidationGroup="adddatapenduduksementara" CssClass="has-error help-block">
+                            
+                        </com:TRequiredFieldValidator>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label text-right">Tanggal Lahir :</label>
+                    <div class="col-md-9">
+                        <com:TCustomDatePicker ID="txtAddTanggalLahir" DateFormat="dd-MMMM-yyyy" Culture="id"  FromYear="1940" UpToYear="<%= @date('Y') %>" InputMode="DropDownList" />
+                    </div>
+                </div>
+                <div class="form-group" id="divAddAgama">
+                    <label class="col-md-3 control-label text-right">Agama :</label>
+                    <div class="col-md-9">
+                        <com:TDropDownList ID="cmbAddAgama" CssClass="form-control" />                                                    
+                        <com:TRequiredFieldValidator ID="FieldAddAgamaValidator" InitialValue="none" ControlToValidate="cmbAddAgama" Display="Dynamic" ErrorMessage="Pilih Agama yang dianut" ValidationGroup="adddatapenduduksementara" FocusOnError="true" CssClass="has-error help-block">			
+                            
+                        </com:TRequiredFieldValidator>                  
+                    </div>
+                </div>
+                <div class="form-group" id="divAddKotaPendidikanTerakhir">
+                    <label class="col-md-3 control-label text-right">Pendidikan Terakhir :</label>
+                    <div class="col-md-9">
+                        <com:TTextBox ID="txtAddKotaPendidikanTerakhir" CssClass="form-control" />                            
+                        <com:TRequiredFieldValidator ID="FieldAddKotaPendidikanTerakhirValidator" ControlToValidate="txtAddKotaPendidikanTerakhir" Display="Dynamic" ErrorMessage="Isi Kota saat Pendidikan Terakhir" ValidationGroup="adddatapenduduksementara" CssClass="has-error help-block">
+                            
+                        </com:TRequiredFieldValidator>
+                    </div>
+                </div>
+                <div class="form-group" id="divAddPekerjaan">
+                    <label class="col-md-3 control-label text-right">Pekerjaan :</label>
+                    <div class="col-md-9">
+                        <com:TDropDownList ID="cmbAddPekerjaan" CssClass="form-control"/>
+                        <com:TRequiredFieldValidator ID="FieldAddPekerjaanValidator" InitialValue="none" ControlToValidate="cmbAddPekerjaan" Display="Dynamic" ErrorMessage="Pilih Pekerjaan Orangtua." ValidationGroup="adddatapenduduksementara" CssClass="has-error help-block">
+                            
+                        </com:TRequiredFieldValidator>
+                    </div>
+                </div> 
+                <div class="form-group">
+                    <label class="col-md-3 control-label text-right">Dapat Membaca Huruf :</label>
+                    <div class="col-md-9">
+                        <com:TRadioButton ID="rdAddYa" Checked="true" GroupName="rdaddBaca"/>                        
+                        <label>Ya</label>
+                        <com:TRadioButton ID="rdAddTidak" GroupName="rdaddBaca"/>                        
+                        <label>Tidak</label>
+                    </div>
+                </div>
+                <div class="form-group" id="divAddKewarganegaraan">
+                    <label class="col-md-3 control-label text-right">Kewarganegaraan :</label>
+                    <div class="col-md-9">
+                        <com:TDropDownList ID="cmbAddKewarganegaraan" CssClass="form-control" />                                                    
+                        <com:TRequiredFieldValidator ID="FieldAddKewarganegaraanValidator" InitialValue="none" ControlToValidate="cmbAddKewarganegaraan" Display="Dynamic" ErrorMessage="Pilih Agama yang dianut" ValidationGroup="adddatapenduduksementara" FocusOnError="true" CssClass="has-error help-block">			
+                           
+                        </com:TRequiredFieldValidator>                  
+                    </div>
+                </div>
+                <div class="form-group" id="divAddAlamatLengkap">
+                    <label class="col-md-3 control-label text-right">Alamat Lengkap :</label>
+                    <div class="col-md-9">
+                        <com:TTextBox ID="txtAddAlamatLengkap" CssClass="form-control" />
+                        <com:TRequiredFieldValidator ID="FieldAddAlamatLengkapValidator" ControlToValidate="txtAddAlamatLengkap" Display="Dynamic" ErrorMessage="Isi Alamat Tempat Tinggal" ValidationGroup="adddatapenduduksementara" CssClass="has-error help-block">
+                            
+                        </com:TRequiredFieldValidator>
+                    </div>
+                </div>  
+                <div class="form-group" id="divAddDatangDari">
+                    <label class="col-md-3 control-label text-right">Datang Dari :</label>
+                    <div class="col-md-9">
+                        <com:TDropDownList ID="cmbAddDatangDari" CssClass="form-control" />                                                    
+                        <com:TRequiredFieldValidator ID="FieldAddcmbAddDatangDari" InitialValue="none" ControlToValidate="cmbAddDatangDari" Display="Dynamic" ErrorMessage="Pilih Agama yang dianut" ValidationGroup="adddatapenduduksementara" FocusOnError="true" CssClass="has-error help-block">			
+                            
+                        </com:TRequiredFieldValidator>                  
+                    </div>
+                </div>
+                <div class="form-group" id="divAddMaksudDanTujuan">
+                    <label class="col-md-3 control-label text-right">Maksud dan Tujuan Kedatangan :</label>
+                    <div class="col-md-9">
+                        <com:TTextBox ID="txtAddMaksudDanTujuan" CssClass="form-control" />
+                        <com:TRequiredFieldValidator ID="FieldAddMaksudDanTujuan" ControlToValidate="txtAddMaksudDanTujuan" Display="Dynamic" ErrorMessage="Isi Maksud dan Tujuan" ValidationGroup="adddatapenduduksementara" CssClass="has-error help-block">
+                            
+                        </com:TRequiredFieldValidator>
+                    </div>
+                </div>  
+                <div class="form-group" id="divAddNamaYangDidatangi">
+                    <label class="col-md-3 control-label text-right">Nama yang didatangi :</label>
+                    <div class="col-md-9">
+                        <com:TTextBox ID="txtAddNamaYangDidatangi" CssClass="form-control" />
+                        <com:TRequiredFieldValidator ID="FieldAddNamaYangDidatangi" ControlToValidate="txtAddNamaYangDidatangi" Display="Dynamic" ErrorMessage="Isi Alamat Tempat Tinggal" ValidationGroup="adddatapenduduksementara" CssClass="has-error help-block">
+                            
+                        </com:TRequiredFieldValidator>
+                    </div>
+                </div>  
+                
+                <div class="form-group">
+                    <label class="col-md-3 control-label text-right">Datang Tanggal :</label>
+                    <div class="col-md-9">
+                        <com:TCustomDatePicker ID="txtAddDatangTanggal" DateFormat="dd-MMMM-yyyy" Culture="id"  FromYear="1940" UpToYear="<%= @date('Y') %>" InputMode="DropDownList" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label text-right">Pergi Tanggal :</label>
+                    <div class="col-md-9">
+                        <com:TCustomDatePicker ID="txtAddPergiTanggal" DateFormat="dd-MMMM-yyyy" Culture="id"  FromYear="1940" UpToYear="<%= @date('Y') %>" InputMode="DropDownList" />
+                    </div>
+                </div>
+                <div class="form-group" id="divAddKeterangan">
+                    <label class="col-md-3 control-label text-right">Keterangan :</label>
+                    <div class="col-md-9">
+                        <com:TTextBox ID="txtAddKeterangan" CssClass="form-control" TextMode="MultiLine" />
+                    </div>
+                </div> 
+                <div class="form-group">
+                    <div class="col-md-offset-3 col-md-9">
+                        <com:TActiveCustomButton ID="btnSave" ValidationGroup="adddatapenduduksementara" OnClick="saveData" CssClass="btn btn-info btn-labeled btn-xs">
+                            <prop:Text>                                        
+                                <b><i class="icon-floppy-disk "></i></b> Simpan                                        
+                            </prop:Text>
+                            <prop:ClientSide.OnPreDispatch>         
+                                Pace.stop();
+                                Pace.start();
+                                $('<%=$this->btnSave->ClientId%>').disabled='disabled';         
+                            </prop:ClientSide.OnPreDispatch>
+                            <prop:ClientSide.OnLoading>
+                                $('<%=$this->btnSave->ClientId%>').disabled='disabled';                     
+                            </prop:ClientSide.OnLoading>
+                            <prop:ClientSide.OnComplete>                                                                    
+                                $('<%=$this->btnSave->ClientId%>').disabled='';                                                                                                                 
+                            </prop:ClientSide.OnComplete>
+                        </com:TActiveCustomButton>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>  
+</com:TPanel>
+</com:TContent>
