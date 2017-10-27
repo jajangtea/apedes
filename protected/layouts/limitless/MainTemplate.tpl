@@ -142,8 +142,8 @@
                                         <li<%=$this->Page->showBukuIndukPenduduk==true?' class="active"':''%>><a href="<%=$this->Page->constructUrl('capil.IndukPenduduk',true)%>"><i class="icon-width"></i> Buku Induk Penduduk</a></li>
                                         <li><a href="<%=$this->Page->constructUrl('capil.Kepdes',true)%>"><i class="icon-width"></i> Mutasi Penduduk Desa</a></li>
                                         <li><a href="<%=$this->Page->constructUrl('capil.PendudukSementara',true)%>"><i class="icon-width"></i> Penduduk Sementara</a></li>
-                                        <li><a href="<%=$this->Page->constructUrl('capil.KTP',true)%>"><i class="icon-width"></i> Kartu Tanda Penduduk</a></li>
-                                        <li><a href="<%=$this->Page->constructUrl('capil.KK',true)%>"><i class="icon-width"></i> Kartu Keluarga</a></li>                                        
+                                        <li><a href="<%=$this->Page->constructUrl('capil.KTP',true)%>"><i class="icon-width"></i> KTP dan Kartu Keluarga</a></li>
+                                                                         
                                     </ul>
                                 </div>  
                                 <div class="col-md-3">
