@@ -22,6 +22,16 @@ SET time_zone = "+00:00";
 
 -- --------------------------------------------------------
 
+
+--
+-- Struktur dari tabel `agama`
+--
+
+CREATE TABLE `agama` (
+  `idagama` tinyint(4) NOT NULL,
+  `nama_agama` varchar(30) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
 --
 -- Struktur dari tabel `log_aktivitas_user`
 --
